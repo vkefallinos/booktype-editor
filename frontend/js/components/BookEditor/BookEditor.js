@@ -72,19 +72,20 @@ export default class BookEditor extends Component {
   componentDidMount() {
     var comp = this;
     highlightCode(this);
-    doc.subscribe(function(err) {
-      if (err) throw err;
-      var element = document.querySelector('textarea');
-      var binding = new StringBinding(element, doc);
-      binding.setup();
-    });
-    var query = ShareConnection.createSubscribeQuery('players', {$sort: {score: -1}});
-    query.on('ready', update);
-    query.on('changed', update);
 
-    function update() {
-      comp.setState({value: query.results});
-    }
+    // doc.subscribe(function(err) {
+    //   if (err) throw err;
+    //   var element = document.querySelector('textarea');
+    //   var binding = new StringBinding(element, doc);
+    //   binding.setup();
+    // });
+    // var query = ShareConnection.createSubscribeQuery('players', {$sort: {score: -1}});
+    // query.on('ready', update);
+    // query.on('changed', update);
+    //
+    // function update() {
+    //   comp.setState({value: query.results});
+    // }
   }
 
   handleEditorTabChange = (tab) => {
@@ -101,19 +102,20 @@ export default class BookEditor extends Component {
 
   onChange(value) {
     console.log(value)
-    a = this.state.value.blocks
-    b = value.blocks
-    var onlyInA = a.filter(function(current){
-        return b.filter(function(current_b){
-            return current_b.value == current.value && current_b.display == current.display
-        }).length == 0
-    });
 
-    var onlyInB = b.filter(function(current){
-        return a.filter(function(current_a){
-            return current_a.value == current.value && current_a.display == current.display
-        }).length == 0
-    });
+    // var a = this.state.value.blocks
+    // var b = value.blocks
+    // var onlyInA = a.filter(function(current){
+    //     return b.filter(function(current_b){
+    //         return current_b.value == current.value && current_b.display == current.display
+    //     }).length == 0
+    // });
+    //
+    // var onlyInB = b.filter(function(current){
+    //     return a.filter(function(current_a){
+    //         return current_a.value == current.value && current_a.display == current.display
+    //     }).length == 0
+    // });
 
     this.setState({
       value
