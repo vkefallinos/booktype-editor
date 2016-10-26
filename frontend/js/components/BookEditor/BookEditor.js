@@ -55,7 +55,7 @@ export default class BookEditor extends Component {
   constructor(props) {
     super(props);
     const content = editorStateFromRaw(INITIAL_CONTENT);
-    console.log(content)
+    // console.log(content)
     this.keyBindings = [
         { name: "save", isKeyBound: (e) => { return e.keyCode === 83 && e.ctrlKey; }, action: () => { this.onSave(); } }
     ];
@@ -101,7 +101,7 @@ export default class BookEditor extends Component {
   };
 
   onChange(value) {
-    console.log(value)
+    // console.log(value)
 
     // var a = this.state.value.blocks
     // var b = value.blocks

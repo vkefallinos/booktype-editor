@@ -20,9 +20,9 @@ export default class BigStockPhotoViewer extends React.Component {
           .use(jsonp)
           .end((error, response) => {
              if (response) {
-                 console.log(response.body.data)
+                //  console.log(response.body.data)
                  this.setState({ categories: response.body.data });
-                 console.log(this.state.categories)
+                //  console.log(this.state.categories)
              }
           });
     }
@@ -36,9 +36,9 @@ export default class BigStockPhotoViewer extends React.Component {
             })
             .use(jsonp)
             .end((error, response) => {
-              console.log(response)
+              // console.log(response)
                if (response) {
-                 console.log(response.body.data.images)
+                //  console.log(response.body.data.images)
                    this.setState({ results: response.body.data.images });
                }
             });

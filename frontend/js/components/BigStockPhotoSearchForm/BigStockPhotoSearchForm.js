@@ -16,7 +16,7 @@ export default class BigStockPhotoSearchForm extends React.Component {
         };
     }
     handleCategoryChange(event, index, value){
-      console.log(value)
+      // console.log(value)
       this.setState({
           category: value
       });
@@ -40,7 +40,7 @@ export default class BigStockPhotoSearchForm extends React.Component {
     }
 
     render() {
-      console.log(this.props)
+      // console.log(this.props)
         return (
             <div className="search-box-container" >
                 <form onSubmit={this.handleSubmit.bind(this)}>
