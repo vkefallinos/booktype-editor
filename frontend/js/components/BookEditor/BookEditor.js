@@ -30,7 +30,9 @@ const styles = {
   },
   helperTab: {
     flex: 4,
-    width: '20%'
+    width: '20%',
+    bottom: 0,
+    position:'relative'
   },
   editorContainer:{
     padding: 60,
