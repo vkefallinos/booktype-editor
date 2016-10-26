@@ -101,8 +101,8 @@ export default class BookEditor extends Component {
 
   onChange(value) {
     console.log(value)
-    a = this.state.value.blocks
-    b = value.blocks
+    var a = this.state.value.blocks
+    var b = value.blocks
     var onlyInA = a.filter(function(current){
         return b.filter(function(current_b){
             return current_b.value == current.value && current_b.display == current.display
