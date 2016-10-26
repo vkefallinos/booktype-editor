@@ -72,19 +72,19 @@ export default class BookEditor extends Component {
   componentDidMount() {
     var comp = this;
     highlightCode(this);
-    doc.subscribe(function(err) {
-      if (err) throw err;
-      var element = document.querySelector('textarea');
-      var binding = new StringBinding(element, doc);
-      binding.setup();
-    });
-    var query = ShareConnection.createSubscribeQuery('players', {$sort: {score: -1}});
-    query.on('ready', update);
-    query.on('changed', update);
-
-    function update() {
-      comp.setState({value: query.results});
-    }
+    // doc.subscribe(function(err) {
+    //   if (err) throw err;
+    //   var element = document.querySelector('textarea');
+    //   var binding = new StringBinding(element, doc);
+    //   binding.setup();
+    // });
+    // var query = ShareConnection.createSubscribeQuery('players', {$sort: {score: -1}});
+    // query.on('ready', update);
+    // query.on('changed', update);
+    //
+    // function update() {
+    //   comp.setState({value: query.results});
+    // }
   }
 
   handleEditorTabChange = (tab) => {
